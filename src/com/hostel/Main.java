@@ -5,6 +5,7 @@ import com.hostel.entity.Client;
 import com.hostel.entity.Hotel;
 import com.hostel.entity.Room;
 import com.hostel.service.BookingService;
+import com.hostel.service.Selected;
 
 import java.awt.print.Book;
 import java.util.Scanner;
@@ -36,8 +37,10 @@ public class Main {
         System.out.println("1 - " + element.getPrice() + element.getPersoneAmount() + element.getFreeOrNot());
     }
         Scanner chooseRoom = new Scanner(System.in);
-        String pidor = chooseRoom.nextLine();
+        Integer ppp = chooseRoom.nextInt();
 
+        Selected selected = new Selected();
+        Room selectedRoom = selected.selectedRoom(hotel1Room, ppp);
 
 
 
@@ -45,7 +48,10 @@ public class Main {
 
         Book book = new Book();
         BookingService booking = new BookingService();
-        //booking.Booking(hotel1, persone1, Room);
+        booking.Booking(hotel1, persone1, selectedRoom);
+
+
+
 
 
     }
