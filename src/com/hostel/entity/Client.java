@@ -8,14 +8,21 @@ public class Client {
     private String gender;
     private Bill bill;
 
+    public Bill getBill() {
+        return bill;
+    }
 
+    public void setBill(Bill bill) {
+        this.bill = bill;
+    }
 
-    public Client(String name, String lastName, String phoneNumber, String email, String gender) {
+    public Client(String name, String lastName, String phoneNumber, String email, String gender, Bill bill) {
         this.name = name;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.gender = gender;
+        this.bill = bill;
 
     }
 
@@ -57,10 +64,6 @@ public class Client {
 
     public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public Bill getBill() {
-        return bill;
     }
 
     public void setGender(Bill bill) {

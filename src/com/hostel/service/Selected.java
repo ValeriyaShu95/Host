@@ -1,17 +1,31 @@
 package com.hostel.service;
 
+import com.hostel.entity.Hotel;
 import com.hostel.entity.Room;
+
+import java.util.Scanner;
 
 public class Selected {
 
-    public Room selectedRoom(Room[] rooms, Integer ppp) {
-        int a = 0;
+    public Room selectRoom(Room[] rooms) {
+
+        System.out.println("Выберете комнату");
         for (Room element : rooms) {
-            a = a+1;
-            if (ppp == a) {
+            System.out.println("1 - " + element.getPrice() + element.getPersoneAmount() + element.getFreeOrNot());
+        }
+        Scanner chooseRoom = new Scanner(System.in);
+        int numberOfRoom = chooseRoom.nextInt();
+
+        int iterator = 0;
+        for (Room element : rooms) { //
+            iterator = iterator + 1;
+            if (numberOfRoom == iterator) {
                 return element;
             }
         }
         return null;
+
+
     }
 }
+
