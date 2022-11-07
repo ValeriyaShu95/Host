@@ -32,11 +32,16 @@ public class Main {
         Room[] hotel4Room = new Room[]{new Room(7, 10500, "free")};
         Hotel hotel4 = new Hotel("Leroy", hotel4Room);
 
+
+
+        Hotel [] hotels = new Hotel[] {hotel1, hotel2, hotel3};
+        Client [] clients = new Client[] {persone1, persone2,persone1};
+
+
         Selected selected = new Selected();
+        Client selectedClient = selected.selectPersone(clients);
         Room selectedRoom = selected.selectRoom(hotel1Room);
 
-
-        Book book = new Book();
         BookingService booking = new BookingService();
         booking.Booking(hotel1, persone1, selectedRoom);
 
