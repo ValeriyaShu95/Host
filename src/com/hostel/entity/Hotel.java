@@ -11,7 +11,7 @@ public class Hotel {
 
     public Hotel(String hotelName, Room[] rooms) {
         this.hotelName = hotelName;
-        //this.roomList = roomList;
+        this.rooms = rooms;
     }
 
     public String getHotelName() {

@@ -32,8 +32,14 @@ public class Main {
         Room[] hotel4Room = new Room[]{new Room(7, 10500, "free")};
         Hotel hotel4 = new Hotel("Leroy", hotel4Room);
 
+        Hotel[] allHotels = new Hotel[] {hotel1,hotel2,hotel3,hotel4};
+
+        Client [] allPers = new  Client[] {persone1, persone2};
+
         Selected selected = new Selected();
-        Room selectedRoom = selected.selectRoom(hotel1Room);
+        Client selectPersone = selected.selectPersone(allPers); //  allPers - пишем только название массива без "[]"
+        Hotel selectedHotel = selected.selectHotel(allHotels);
+        Room selectedRoom = selected.selectRoom(selectedHotel.getRooms());
 
 
         Book book = new Book();
