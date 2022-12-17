@@ -33,14 +33,15 @@ public class Main {
         Hotel hotel4 = new Hotel("Leroy", hotel4Room);
 
 
+        Hotel[] allHotels = new Hotel[] {hotel1,hotel2,hotel3,hotel4};
 
-        Hotel [] hotels = new Hotel[] {hotel1, hotel2, hotel3};
-        Client [] clients = new Client[] {persone1, persone2,persone1};
-
+        Client [] allPers = new  Client[] {persone1, persone2};
 
         Selected selected = new Selected();
-        Client selectedClient = selected.selectPersone(clients);
-        Room selectedRoom = selected.selectRoom(hotel1Room);
+        Client selectPersone = selected.selectPersone(allPers); //  allPers - пишем только название массива без "[]"
+        Hotel selectedHotel = selected.selectHotel(allHotels);
+        Room selectedRoom = selected.selectRoom(selectedHotel.getRooms());
+
 
         BookingService booking = new BookingService();
         booking.Booking(hotel1, persone1, selectedRoom);
