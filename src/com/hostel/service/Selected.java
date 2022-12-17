@@ -8,6 +8,28 @@ import java.util.Scanner;
 
 public class Selected {
 
+    public Client selectPersone(Client[] persone) {
+
+        System.out.println("Выберете имя"); // нужно сделать "Введите имя"
+        for (Client elementClient : persone) {
+            System.out.println(elementClient.getName());
+        }
+        Scanner choosePersone = new Scanner(System.in);
+        int numberOfPersone = choosePersone.nextInt();
+
+        int iterator2 = 0;
+        for (Client element : persone) { //
+            iterator2 = iterator2 + 1;
+
+            if (numberOfPersone == iterator2) {
+                return element;
+            }
+
+        }
+        return null;
+    }
+
+
     public Room selectRoom(Room[] rooms) {
 
         System.out.println("Выберете комнату");
@@ -19,10 +41,12 @@ public class Selected {
         Scanner chooseRoom = new Scanner(System.in);
         int numberOfRoom = chooseRoom.nextInt();
 
+
         int iterator2 = 0;
         for (Room element : rooms) { //
             iterator2 = iterator2 + 1;
             if (numberOfRoom == iterator2) {
+
                 return element;
             }
         }
@@ -68,5 +92,7 @@ public class Selected {
         return null;
     }
 }
+
+
 
 
